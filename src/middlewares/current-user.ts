@@ -29,9 +29,6 @@ export const currentUser = (
         // Generate Jwt
         const payload = JwtManager.validate(req.session.jwt) as UserPayload;
         req.currentUser = payload;
-        return res.json({
-            currentUser: payload
-        });
     } catch (error) {}
     next();
 };
